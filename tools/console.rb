@@ -13,8 +13,9 @@ c4 = Cult.new("bad", "Washington", 1992, "This cults sucks")
 
 f1 = Follower.new("bro", 25, "I love cheese")
 f2 = Follower.new("dude", 45, "Simpsons rule")
-f3 = Follower.new("guy", 20, "capitalism sucks")
+f3 = Follower.new("guy", 25, "capitalism sucks")
 f4 = Follower.new("hella", 68, "communism sucks")
+f5 = Follower.new("youngin", 20, "game of thrones sucks")
 
 bo1 = BloodOath.new(c1, f1, "2010-02-01")
 bo2 = BloodOath.new(c1, f2, "1992-03-17")

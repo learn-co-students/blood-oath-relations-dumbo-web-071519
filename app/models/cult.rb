@@ -11,8 +11,16 @@ class Cult
         @@all << self
     end
 
+    def minimum_age
+        24
+    end
+
     def recruit_follower(follower, initiation_date)
-        BloodOath.new(self, follower, initiation_date)
+        if follower.age < self.minimum_age
+            puts "Sorry, you are too young for this cult!"
+        else 
+            BloodOath.new(self, follower, initiation_date)
+        end
     end
     
     def cult_oaths
@@ -21,6 +29,10 @@ class Cult
 
     def cult_population
        self.cult_oaths.count
+    end
+
+    def get_cult_members
+        self.cult_oaths.map{|blood_oath| blood_oath.follower}
     end
 
     def self.all

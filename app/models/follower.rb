@@ -19,7 +19,11 @@ class Follower
     end
 
     def join_cult(cult, initiation_date)
-        BloodOath.new(cult, self, initiation_date)
+        if self.age < cult.minimum_age
+            puts "Sorry, you are too young for this cult!"
+        else
+            BloodOath.new(cult, self, initiation_date)
+        end
     end
 
     def self.all
@@ -56,5 +60,12 @@ class Follower
             end
         }
         return list_of_ten
+    end
+
+    def fellow_cult_members
+        fellow_mems = self.cults.map{|cult| cult.get_cult_members}
+        flattened_and_uniq = fellow_mems.flatten.uniq
+        flattened_and_uniq.delete(self)
+        flattened_and_uniq
     end
 end
