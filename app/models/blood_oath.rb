@@ -13,7 +13,11 @@ class BloodOath
     def self.all
         @@all
     end
-   
 
+    def self.first_oath
+        dates_array = @@all.map{|blood_oath| blood_oath.initiation_date}
+        sorted = dates_array.sort
+        @@all.find{|blood_oath| blood_oath.initiation_date == sorted.first}.follower
+    end
     
 end
