@@ -1,6 +1,0 @@
-# Cult.most_common_location
-requires sorting by location frequency
-but what to do if you have two locations at the same frequency?
-e.g. [1,2,2,3,3].sort_by{|i| array.count(i)} returns '2'
-# BloodOath.first_oath
-requires sorting by DATE
