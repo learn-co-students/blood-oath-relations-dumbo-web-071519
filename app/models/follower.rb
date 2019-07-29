@@ -65,4 +65,8 @@ class Follower
         arr
     end
 
+    def fellow_cult_members
+        
+    end
+
 end
